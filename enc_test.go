@@ -3,14 +3,15 @@ package encrypt
 import "testing"
 
 func TestEncStr(t *testing.T) {
-	str := "It is apple."
+	str := "abbc"
+	key := 1
 
-	txt, err := EncStr(str)
+	txt, err := EncStr(str, key)
 	if err != nil {
 		t.Errorf("Somethins happen here: %s", err.Error())
 	}
 
-	expectStr := "hey !!" + str
+	expectStr := "bcca"
 
 	if txt != expectStr {
 		t.Error("Return text is not expected.")
